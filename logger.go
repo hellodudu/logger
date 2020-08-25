@@ -12,7 +12,7 @@ import (
 )
 
 var (
-	lokiEndPoint  = "http://192.168.1.244:3100/api/prom/push"
+	lokiEndPoint  = "http://localhost:3100/api/prom/push"
 	lokiBatchSize = 1024
 	lokiBatchWait = 3
 

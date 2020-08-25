@@ -10,7 +10,7 @@ func TestLogger(t *testing.T) {
 	// 初始化logger文件名字，是否采集日志到loki，如果是跑在docker中的话不需要开启loki
 	Init("game server", true, "")
 	EnableLoki(true)
-	//SetLokiConfig("http://localhost:3100/api/prom/push", 1024, 5)
+	SetLokiConfig("http://localhost:3100/api/prom/push", 1024, 5)
 	Info("test")
 	Warn("warn")
 	Error("error")

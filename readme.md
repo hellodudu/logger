@@ -3,6 +3,7 @@ Logger combines a wrapper of logrus and schoentoon/logrus-loki, not only use std
 ## Usage
 
 ```golang
+func main() {
     Init("game server", true, "")
 	EnableLoki(true)
 	SetLokiConfig("http://localhost:3100/api/prom/push", 1024, 5)
@@ -16,6 +17,7 @@ Logger combines a wrapper of logrus and schoentoon/logrus-loki, not only use std
 		"url":   "http://google.com",
 	}
 	WithFieldsWarn(fields, "ping to google")
+}
 
 ```
 

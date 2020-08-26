@@ -57,12 +57,13 @@ func newLogger(fn string, enableLoki bool, lokiUrl string) *Logger {
 	l.SetOutput(io.MultiWriter(os.Stdout, file))
 
 	// report caller
-	l.SetReportCaller(true)
+	l.SetReportCaller(false)
 
 	// set formatter
 	fileFormatter := new(logrus.TextFormatter)
 	fileFormatter.TimestampFormat = "2006-01-02 15:04:05"
 	fileFormatter.FullTimestamp = true
+	fileFormatter.ForceColors = true
 	l.SetFormatter(fileFormatter)
 
 	// loki

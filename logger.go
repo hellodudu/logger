@@ -8,6 +8,7 @@ import (
 	"time"
 
 	logrusloki "github.com/hellodudu/logrus-loki"
+	"github.com/shiena/ansicolor"
 	logrus "github.com/sirupsen/logrus"
 )
 
@@ -54,7 +55,7 @@ func newLogger(fn string, enableLoki bool, lokiUrl string) *Logger {
 	}
 
 	// set writer
-	l.SetOutput(io.MultiWriter(os.Stdout, file))
+	l.SetOutput(io.MultiWriter(ansicolor.NewAnsiColorWriter(os.Stdout), file))
 
 	// report caller
 	l.SetReportCaller(false)
